@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>귀여운 도형 영어 단어 퀴즈</title>
+
+    <!-- 글씨체: 귀여운 지마켓 산스 폰트 적용 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff2">
+
+    <style>
+        body {
+            font-family: 'GmarketSansMedium', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #FFF9E6;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #FFDE6A;
+        }
+
+        h1 {
+            color: #FF6B6B;
+            font-size: 24px;
+        }
+
+        /* 도형 그림 스타일 */
+        .shape-img {
+            width: 120px;
+            height: 120px;
+            margin: 15px auto;
+        }
+
+        .shape-img svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            font-family: 'GmarketSansMedium', sans-serif;
+            font-size: 18px;
+            padding: 12px 20px;
+            margin: 6px;
+            background-color: #4ECDC4;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 80%;
+        }
+
+        button:hover {
+            background-color: #3db3ac;
+        }
+
+        #next-btn {
+            background-color: #FF6B6B;
+            margin-top: 20px;
+            display: none; /* 정답 선택 전에는 숨김 */
+        }
+
+        #feedback {
+            margin-top: 15px;
+            font-size: 18px;
+            min-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>✨ 도형 영단어 퀴즈 ✨</h1>
+
+        <!-- 도형 사진(SVG 그림) -->
+        <div id="image-box" class="shape-img"></div>
+
+        <!-- 질문 -->
+        <p id="question" style="font-size: 20px; font-weight: bold;"></p>
+
+        <!-- 보기 버튼 3개 -->
+        <div id="options">
+            <button onclick="checkAnswer(0)" id="btn0"></button><br>
+            <button onclick="checkAnswer(1)" id="btn1"></button><br>
+            <button onclick="checkAnswer(2)" id="btn2"></button>
+        </div>
+
+        <!-- 피드백 메시지 -->
+        <h3 id="feedback"></h3>
+
+        <!-- 다음 문제 버튼 -->
+        <button id="next-btn" onclick="nextQuestion()">다음 문제 ▶</button>
+    </div>
+
+    <script>
+        // 학습할 도형 단어 5가지 데이터
+        const quizData = [
+            {
+                question: "삼각형은 영어로 무엇일까요?",
+                options: ["Triangle", "Circle", "Rectangle"],
+                answer: "Triangle",
+                svg: '<svg viewBox="0 0 100 100"><polygon points="50,15 90,85 10,85" fill="#4D96FF"/></svg>'
+            },
+            {
+                question: "사각형은 영어로 무엇일까요?",
+                options: ["Pentagon", "Rectangle", "Triangle"],
+                answer: "Rectangle",
+                svg: '<svg viewBox="0 0 100 100"><rect x="15" y="25" width="70" height="50" fill="#6BCB77"/></svg>'
+            },
+            {
+                question: "오각형은 영어로 무엇일까요?",
+                options: ["Pentagon", "Hexagon", "Circle"],
+                answer: "Pentagon",
+                svg: '<svg viewBox="0 0 100 100"><polygon points="50,10 90,40 75,85 25,85 10,40" fill="#FFD93D"/></svg>'
+            },
+            {
+                question: "육각형은 영어로 무엇일까요?",
+                options: ["Triangle", "Rectangle", "Hexagon"],
+                answer: "Hexagon",
+                svg: '<svg viewBox="0 0 100 100"><polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="#FF6BCB"/></svg>'
+            },
+            {
+                question: "원(동그라미)은 영어로 무엇일까요?",
+                options: ["Circle", "Pentagon", "Hexagon"],
+                answer: "Circle",
+                svg: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#FF8A8A"/></svg>'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // 문제 화면 불러오기
+        function showQuestion() {
+            const current = quizData[currentIndex];
+            
+            document.getElementById("image-box").innerHTML = current.svg;
+            document.getElementById("question").innerText = current.question;
+            document.getElementById("btn0").innerText = current.options[0];
+            document.getElementById("btn1").innerText = current.options[1];
+            document.getElementById("btn2").innerText = current.options[2];
+            
+            document.getElementById("feedback").innerText = "";
+            document.getElementById("next-btn").style.display = "none";
+
+            // 버튼 다시 활성화
+            for (let i = 0; i < 3; i++) {
+                document.getElementById("btn" + i).disabled = false;
+            }
+        }
+
+        // 정답 확인 함수
+        function checkAnswer(selectedIndex) {
+            const current = quizData[currentIndex];
+            const selectedText = current.options[selectedIndex];
+
+            // 버튼 중복 클릭 방지
+            for (let i = 0; i < 3; i++) {
+                document.getElementById("btn" + i).disabled = true;
+            }
+
+            if (selectedText === current.answer) {
+                document.getElementById("feedback").innerText = "Correct! Well done! 🎉";
+                document.getElementById("feedback").style.color = "green";
+            } else {
+                document.getElementById("feedback").innerText = "Incorrect. Answer is " + current.answer;
+                document.getElementById("feedback").style.color = "red";
+            }
+
+            // 다음 문제 버튼 보여주기
+            document.getElementById("next-btn").style.display = "inline-block";
+        }
+
+        // 다음 문제로 넘어가기
+        function nextQuestion() {
+            currentIndex++;
+            
+            if (currentIndex < quizData.length) {
+                showQuestion();
+            } else {
+                // 5문제 다 풀었을 때
+                document.getElementById("image-box").innerHTML = "🎉";
+                document.getElementById("question").innerText = "축하합니다! 5개 단어를 모두 학습했습니다!";
+                document.getElementById("options").style.display = "none";
+                document.getElementById("feedback").innerText = "";
+                document.getElementById("next-btn").innerText = "처음부터 다시 하기";
+                document.getElementById("next-btn").onclick = function() {
+                    location.reload();
+                };
+            }
+        }
+
+        // 앱 시작 시 첫 문제 표시
+        showQuestion();
+    </script>
+
+</body>
+
+</html>
