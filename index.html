@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> Yujin's English Learning App</title>
+    <title>Yujin's English Learning App</title>
 
     <!-- CSS: Change how the app looks -->
     <style>
@@ -17,6 +17,7 @@
             padding: 12px;
             margin: 10px;
             background-color: yellow;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -27,18 +28,19 @@
 
     <h1>Vocabulary Quiz</h1>
 
-    <p>What does "give up" mean?</p>
+    <p>"give up"의 뜻은 무엇일까요?</p>
 
-    <button onclick="checkAnswer('give up')">
-        Give up
+    <!-- 정답이 되는 버튼의 전달값을 '포기하다' 또는 'quit' 등으로 수정 -->
+    <button onclick="checkAnswer('포기하다')">
+        포기하다
     </button>
 
-    <button onclick="checkAnswer('avoid')">
-        Avoid
+    <button onclick="checkAnswer('피하다')">
+        피하다
     </button>
 
-    <button onclick="checkAnswer('watch')">
-        Watch
+    <button onclick="checkAnswer('보다')">
+        보다
     </button>
 
     <h3 id="feedback"></h3>
@@ -47,21 +49,13 @@
     <!-- JavaScript: Change what happens -->
 
     <script>
-
         function checkAnswer(answer) {
-
-            if (answer === "give up") {
-                document.getElementById("feedback").innerText =
-                    "정답입니다!";
+            if (answer === "포기하다") {
+                document.getElementById("feedback").innerText = "정답입니다!";
+            } else {
+                document.getElementById("feedback").innerText = "틀렸어요. 정답은 'give up (포기하다)'입니다.";
             }
-
-            else {
-                document.getElementById("feedback").innerText =
-                    "틀렸어요. 정답은 give up(포기하다)입니다.";
-            }
-
         }
-
     </script>
 
 </body>
