@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>👑 Princess English</title>
+
+<!--
+  영어 : Baloo 2
+  한글 : Jua
+  보조 : Noto Sans KR
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Jua&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+    --pink: #ff77b4;
+    --pink-dark: #ef5c9d;
+    --pink-light: #ffe5f1;
+
+    --purple: #a984e8;
+    --purple-light: #eee5ff;
+
+    --cream: #fffafc;
+
+    --text: #704d67;
+    --sub-text: #a67c98;
+
+    --white: #ffffff;
+
+    --shadow:
+        0 20px 50px rgba(209, 111, 160, .18);
+
+    --small-shadow:
+        0 7px 18px rgba(209, 111, 160, .14);
+}
+
+
+/* =========================================================
+   기본
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,255,255,.95) 0 3px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(255,255,255,.8) 0 4px,
+            transparent 5px
+        ),
+        linear-gradient(
+            135deg,
+            #ffd9eb 0%,
+            #fff1f8 42%,
+            #eee5ff 100%
+        );
+
+    background-size:
+        130px 130px,
+        170px 170px,
+        100% 100%;
+
+    font-family:
+        'Jua',
+        'Noto Sans KR',
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* 영어 */
+.english {
+    font-family:
+        'Baloo 2',
+        sans-serif;
+}
+
+
+/* =========================================================
+   배경 장식
+========================================================= */
+
+.background-decoration {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.floating {
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: .55;
+
+    animation:
+        floating 5s ease-in-out infinite;
+}
+
+
+.f1 {
+    left: 5%;
+    top: 12%;
+}
+
+
+.f2 {
+    right: 7%;
+    top: 18%;
+    animation-delay: 1s;
+}
+
+
+.f3 {
+    left: 8%;
+    bottom: 18%;
+    animation-delay: 2s;
+}
+
+
+.f4 {
+    right: 8%;
+    bottom: 10%;
+    animation-delay: 3s;
+}
+
+
+.f5 {
+    left: 48%;
+    top: 5%;
+    animation-delay: 1.5s;
+}
+
+
+@keyframes floating {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-17px)
+            rotate(10deg);
+    }
+}
+
+
+/* =========================================================
+   앱
+========================================================= */
+
+.app {
+
+    position: relative;
+
+    z-index: 1;
+
+    width:
+        min(
+            1050px,
+            calc(100% - 28px)
+        );
+
+    margin: auto;
+
+    padding:
+        30px 0 45px;
+}
+
+
+/* =========================================================
+   헤더
+========================================================= */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.crown {
+
+    display: inline-block;
+
+    font-size: 60px;
+
+    filter:
+        drop-shadow(
+            0 7px 5px
+            rgba(180,100,150,.18)
+        );
+
+    animation:
+        crownFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes crownFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+    }
+}
+
+
+.title {
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            68px
+        );
+
+    line-height: 1;
+
+    color: var(--pink);
+
+    text-shadow:
+        3px 3px 0 white,
+        5px 6px 0
+        rgba(210,110,160,.15);
+
+    letter-spacing: -1px;
+}
+
+
+.subtitle {
+
+    margin-top: 12px;
+
+    color: var(--sub-text);
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   메인 카드
+========================================================= */
+
+.main-card {
+
+    position: relative;
+
+    padding: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .88
+        );
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    border:
+        3px solid
+        rgba(255,255,255,.9);
+
+    border-radius: 32px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+/* =========================================================
+   입력 영역
+========================================================= */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    color: #855b78;
+}
+
+
+textarea {
+
+    width: 100%;
+
+    min-height: 165px;
+
+    resize: vertical;
+
+    padding: 18px 20px;
+
+    border:
+        3px solid
+        #ffd0e3;
+
+    border-radius: 22px;
+
+    background:
+        #fffafd;
+
+    outline: none;
+
+    color: #68485f;
+
+    font-family:
+        'Baloo 2',
+        'Noto Sans KR',
+        sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    transition: .25s;
+}
+
+
+textarea::placeholder {
+
+    color:
+        #d3a5be;
+}
+
+
+textarea:focus {
+
+    border-color:
+        #ff83b7;
+
+    background:
+        white;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(255,130,183,.12);
+}
+
+
+.char-count {
+
+    text-align: right;
+
+    color:
+        #c596ae;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   억양
+========================================================= */
+
+.accent-section {
+
+    margin-top: 20px;
+}
+
+
+.accent-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.accent {
+
+    position: relative;
+
+    border:
+        2px solid
+        #f3cade;
+
+    background:
+        #fffafd;
+
+    border-radius: 19px;
+
+    padding: 14px;
+
+    font-family: inherit;
+
+    color:
+        #82556f;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.accent:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #ff99c4;
+}
+
+
+.accent.selected {
+
+    border-color:
+        #ff72ad;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe1ee,
+            #f0e8ff
+        );
+
+    color:
+        #df5795;
+
+    box-shadow:
+        var(--small-shadow);
+}
+
+
+.flag {
+
+    font-size: 24px;
+
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   속도
+========================================================= */
+
+.speed-box {
+
+    margin-top: 18px;
+
+    padding: 15px 18px;
+
+    border-radius: 19px;
+
+    border:
+        2px solid
+        #f1dbea;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4fa,
+            #f7f1ff
+        );
+}
+
+
+.speed-top {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 7px;
+}
+
+
+.speed-label {
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.speed-value {
+
+    color:
+        #e85d9c;
+
+    background:
+        white;
+
+    padding:
+        3px 10px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+input[type="range"] {
+
+    width: 100%;
+
+    accent-color:
+        #ff73ad;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   버튼
+========================================================= */
+
+.button-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+.primary-button {
+
+    border: none;
+
+    border-radius: 22px;
+
+    padding: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff70ad,
+            #ff9bc6
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 20px
+        rgba(239,91,153,.25);
+
+    transition: .2s;
+}
+
+
+.primary-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 13px 25px
+        rgba(239,91,153,.3);
+}
+
+
+.secondary-button {
+
+    border:
+        2px solid
+        #e6d2e2;
+
+    border-radius: 22px;
+
+    background:
+        white;
+
+    color:
+        #98728d;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.secondary-button:hover {
+
+    border-color:
+        #ffabc9;
+
+    color:
+        #e85b9b;
+}
+
+
+/* =========================================================
+   상태
+========================================================= */
+
+.status {
+
+    text-align: center;
+
+    min-height: 27px;
+
+    margin-top: 13px;
+
+    color:
+        #a27391;
+
+    font-size: 14px;
+}
+
+
+.status.active {
+
+    color:
+        #e45a9a;
+
+    animation:
+        statusPulse 1.2s infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,100% {
+        opacity: .65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   문장 분석 영역
+========================================================= */
+
+.practice-panel {
+
+    margin-top: 25px;
+
+    padding-top: 23px;
+
+    border-top:
+        2px dashed
+        #f1cfe1;
+}
+
+
+.practice-title {
+
+    font-size: 20px;
+
+    margin-bottom: 13px;
+
+    color:
+        #805772;
+}
+
+
+.sentences {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   문장 카드
+========================================================= */
+
+.sentence-card {
+
+    position: relative;
+
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background:
+        #fffafe;
+
+    border:
+        2px solid
+        #f5dce8;
+
+    transition: .25s;
+
+    overflow: hidden;
+}
+
+
+.sentence-card.playing {
+
+    border-color:
+        #ff83b8;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #f7f0ff
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(236,98,157,.14);
+
+    transform:
+        translateX(3px);
+}
+
+
+.sentence-number {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 50%;
+
+    background:
+        #ffe0ed;
+
+    color:
+        #e55b99;
+
+    font-size: 13px;
+
+    margin-right: 7px;
+}
+
+
+.sentence-text {
+
+    font-family:
+        'Baloo 2',
+        sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    color:
+        #64475d;
+}
+
+
+/* =========================================================
+   단어
+========================================================= */
+
+.word {
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    padding:
+        1px 2px;
+
+    border-radius: 6px;
+
+    transition: .15s;
+}
+
+
+.word:hover {
+
+    color:
+        #e95398;
+
+    background:
+        #ffe3ef;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.word:active {
+
+    transform:
+        scale(.94);
+}
+
+
+/* =========================================================
+   문장 버튼
+========================================================= */
+
+.sentence-tools {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+
+.sentence-button {
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding:
+        6px 11px;
+
+    background:
+        #ffe5f0;
+
+    color:
+        #dc5b96;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.sentence-button:hover {
+
+    background:
+        #ffd1e4;
+
+    transform:
+        translateY(-1px);
+}
+
+
+.translation {
+
+    margin-top: 10px;
+
+    padding-top: 9px;
+
+    border-top:
+        1px dashed
+        #edd4e1;
+
+    color:
+        #9b728b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   IPA / 뜻 입력
+========================================================= */
+
+.extra-info {
+
+    margin-top: 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 9px;
+}
+
+
+.info-input {
+
+    width: 100%;
+
+    border:
+        1px solid
+        #efd5e3;
+
+    border-radius: 12px;
+
+    padding:
+        8px 10px;
+
+    outline: none;
+
+    background:
+        white;
+
+    color:
+        #755269;
+
+    font-family:
+        'Jua',
+        sans-serif;
+
+    font-size: 13px;
+}
+
+
+.info-input:focus {
+
+    border-color:
+        #ff9fc5;
+}
+
+
+/* =========================================================
+   최근 문장
+========================================================= */
+
+.history {
+
+    margin-top: 25px;
+
+    padding:
+        18px;
+
+    border-radius: 21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,237,246,.75),
+            rgba(241,234,255,.75)
+        );
+
+    border:
+        2px solid
+        rgba(239,215,230,.9);
+}
+
+
+.history-title {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 11px;
+
+    font-size: 17px;
+}
+
+
+.clear-history {
+
+    border: none;
+
+    background: none;
+
+    color:
+        #bd8da8;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+
+.history-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.history-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    width: 100%;
+
+    border:
+        1px solid
+        #efd7e5;
+
+    background:
+        rgba(255,255,255,.75);
+
+    border-radius: 13px;
+
+    padding:
+        8px 10px;
+
+    color:
+        #88617b;
+
+    font-family:
+        'Baloo 2',
+        'Jua',
+        sans-serif;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.history-item:hover {
+
+    background:
+        white;
+
+    border-color:
+        #ffb0ce;
+}
+
+
+.history-empty {
+
+    color:
+        #c49aaf;
+
+    font-size: 13px;
+
+    text-align: center;
+
+    padding: 5px;
+}
+
+
+/* =========================================================
+   TIP
+========================================================= */
+
+.tip {
+
+    margin-top: 20px;
+
+    padding: 14px 16px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,233,244,.7);
+
+    border:
+        1px solid
+        #ffd2e5;
+
+    color:
+        #996d87;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+.tip strong {
+
+    color:
+        #df5d99;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    color:
+        #b184a1;
+
+    font-size: 12px;
+}
+
+
+.heart {
+
+    color:
+        #ff74ad;
+
+    display: inline-block;
+
+    animation:
+        heartBeat 1.2s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.25);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   모바일
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .app {
+
+        width:
+            calc(100% - 16px);
+
+        padding-top: 18px;
+    }
+
+
+    .crown {
+
+        font-size: 46px;
+    }
+
+
+    .title {
+
+        font-size: 44px;
+    }
+
+
+    .subtitle {
+
+        font-size: 14px;
+    }
+
+
+    .main-card {
+
+        padding: 18px;
+
+        border-radius: 27px;
+    }
+
+
+    .accent-buttons {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .button-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .extra-info {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    textarea {
+
+        min-height: 145px;
+
+        font-size: 18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     배경 장식
+========================================================= -->
+
+<div class="background-decoration">
+
+    <span class="floating f1">✦</span>
+    <span class="floating f2">♡</span>
+    <span class="floating f3">✧</span>
+    <span class="floating f4">🎀</span>
+    <span class="floating f5">✦</span>
+
+</div>
+
+
+
+<main class="app">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="crown">
+        👑
+    </div>
+
+    <h1 class="title english">
+        Princess English
+    </h1>
+
+    <p class="subtitle">
+        영어를 예쁘게 듣고 연습하는 나만의 공주님 영어방 💕
+    </p>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CARD
+========================================================= -->
+
+<section class="main-card">
+
+
+<!-- 입력 -->
+
+<div class="section-title">
+
+    💌
+    <span>
+        영어 문장을 입력해 주세요
+    </span>
+
+</div>
+
+
+<textarea
+    id="textInput"
+    maxlength="3000"
+    placeholder="예쁜 영어 문장을 입력해 보세요...&#10;&#10;예: Hello! It's lovely to meet you.&#10;I hope you have a wonderful day!"></textarea>
+
+
+<div class="char-count">
+
+    <span id="charCount">
+        0
+    </span>
+    / 3000
+
+</div>
+
+
+
+<!-- 억양 -->
+
+<div class="accent-section">
+
+    <div class="section-title">
+
+        🎀
+        <span>
+            어떤 영어로 읽을까요?
+        </span>
+
+    </div>
+
+
+    <div class="accent-buttons">
+
+        <button
+            class="accent selected"
+            id="britishButton">
+
+            <span class="flag">
+                🇬🇧
+            </span>
+
+            British English
+
+        </button>
+
+
+        <button
+            class="accent"
+            id="americanButton">
+
+            <span class="flag">
+                🇺🇸
+            </span>
+
+            American English
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- 속도 -->
+
+<div class="speed-box">
+
+    <div class="speed-top">
+
+        <span class="speed-label">
+            🐰 읽는 속도
+        </span>
+
+        <span
+            class="speed-value"
+            id="speedValue">
+
+            💕 보통
+
+        </span>
+
+    </div>
+
+
+    <input
+        type="range"
+        id="speedRange"
+        min="0.5"
+        max="1.5"
+        step="0.05"
+        value="0.9">
+
+</div>
+
+
+
+<!-- 버튼 -->
+
+<div class="button-row">
+
+    <button
+        class="primary-button"
+        id="speakButton">
+
+        🔊 전체 읽기
+
+    </button>
+
+
+    <button
+        class="secondary-button"
+        id="stopButton">
+
+        ⏹️ 멈추기
+
+    </button>
+
+</div>
+
+
+
+<!-- 상태 -->
+
+<div
+    class="status"
+    id="status">
+
+    ✨ 문장을 입력하면 공주님 영어 연습이 시작돼요!
+
+</div>
+
+
+
+<!-- =========================================================
+     문장 연습
+========================================================= -->
+
+<section class="practice-panel">
+
+    <div class="practice-title">
+
+        💎 문장별로 연습하기
+
+    </div>
+
+
+    <div
+        class="sentences"
+        id="sentences">
+
+        <div class="sentence-card">
+
+            <div class="sentence-text">
+
+                ✨ 문장을 입력하면
+                여기에서 문장별로 연습할 수 있어요!
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HISTORY
+========================================================= -->
+
+<section class="history">
+
+    <div class="history-title">
+
+        <span>
+            📖 최근 연습 문장
+        </span>
+
+        <button
+            class="clear-history"
+            id="clearHistory">
+
+            지우기
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="history-list"
+        id="historyList">
+
+        <div class="history-empty">
+            아직 저장된 문장이 없어요 💗
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TIP -->
+
+<div class="tip">
+
+    <strong>
+        👑 Princess Tip
+    </strong>
+
+    <br>
+
+    문장 안의 <strong>단어를 클릭</strong>하면
+    그 단어만 따로 들어볼 수 있어요.
+    문장 아래에 <strong>IPA와 한국어 뜻</strong>도 직접 적어둘 수 있답니다. ✨
+
+</div>
+
+
+</section>
+
+
+
+<footer class="footer">
+
+    Made with
+    <span class="heart">♥</span>
+    for your English journey
+
+</footer>
+
+
+</main>
+
+
+
+<script>
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const textInput =
+    document.getElementById("textInput");
+
+const charCount =
+    document.getElementById("charCount");
+
+const britishButton =
+    document.getElementById("britishButton");
+
+const americanButton =
+    document.getElementById("americanButton");
+
+const speedRange =
+    document.getElementById("speedRange");
+
+const speedValue =
+    document.getElementById("speedValue");
+
+const speakButton =
+    document.getElementById("speakButton");
+
+const stopButton =
+    document.getElementById("stopButton");
+
+const status =
+    document.getElementById("status");
+
+const sentences =
+    document.getElementById("sentences");
+
+const historyList =
+    document.getElementById("historyList");
+
+const clearHistory =
+    document.getElementById("clearHistory");
+
+
+/* =========================================================
+   상태
+========================================================= */
+
+let selectedAccent = "british";
+
+let voices = [];
+
+let currentSentence = -1;
+
+
+/* =========================================================
+   음성 목록
+========================================================= */
+
+function loadVoices() {
+
+    voices =
+        window.speechSynthesis.getVoices();
+
+}
+
+
+loadVoices();
+
+
+if ("onvoiceschanged" in speechSynthesis) {
+
+    speechSynthesis.onvoiceschanged =
+        loadVoices;
+
+}
+
+
+/* =========================================================
+   음성 찾기
+========================================================= */
+
+function findVoice(accent) {
+
+    const target =
+        accent === "british"
+            ? "en-GB"
+            : "en-US";
+
+
+    let voice =
+        voices.find(
+            v =>
+                v.lang === target
+        );
+
+
+    if (voice) {
+        return voice;
+    }
+
+
+    voice =
+        voices.find(
+            v =>
+                v.lang &&
+                v.lang
+                    .toLowerCase()
+                    .startsWith(
+                        target
+                            .split("-")[0]
+                            .toLowerCase()
+                    )
+        );
+
+
+    if (voice) {
+        return voice;
+    }
+
+
+    return voices.find(
+        v =>
+            v.lang &&
+            v.lang
+                .toLowerCase()
+                .startsWith("en")
+    ) || null;
+
+}
+
+
+/* =========================================================
+   속도
+========================================================= */
+
+function updateSpeedText() {
+
+    const value =
+        Number(speedRange.value);
+
+
+    let text;
+
+
+    if (value <= .6) {
+
+        text = "🐢 아주 천천히";
+
+    } else if (value <= .75) {
+
+        text = "🌷 천천히";
+
+    } else if (value <= .95) {
+
+        text = "💕 보통";
+
+    } else if (value <= 1.15) {
+
+        text = "✨ 조금 빠르게";
+
+    } else if (value <= 1.3) {
+
+        text = "🐰 빠르게";
+
+    } else {
+
+        text = "⚡ 아주 빠르게";
+
+    }
+
+
+    speedValue.textContent = text;
+
+}
+
+
+speedRange.addEventListener(
+    "input",
+    updateSpeedText
+);
+
+
+/* =========================================================
+   글자수
+========================================================= */
+
+function updateCharCount() {
+
+    charCount.textContent =
+        textInput.value.length;
+
+}
+
+
+textInput.addEventListener(
+    "input",
+    () => {
+
+        updateCharCount();
+
+        createSentenceCards();
+
+    }
+);
+
+
+/* =========================================================
+   억양
+========================================================= */
+
+function selectAccent(accent) {
+
+    selectedAccent = accent;
+
+
+    britishButton.classList.toggle(
+        "selected",
+        accent === "british"
+    );
+
+
+    americanButton.classList.toggle(
+        "selected",
+        accent === "american"
+    );
+
+
+    const name =
+        accent === "british"
+            ? "🇬🇧 British English"
+            : "🇺🇸 American English";
+
+
+    status.textContent =
+        `${name}로 읽을 준비가 됐어요 ✨`;
+
+}
+
+
+britishButton.addEventListener(
+    "click",
+    () => selectAccent("british")
+);
+
+
+americanButton.addEventListener(
+    "click",
+    () => selectAccent("american")
+);
+
+
+/* =========================================================
+   문장 나누기
+========================================================= */
+
+function splitSentences(text) {
+
+    return text
+        .split(
+            /(?<=[.!?])\s+|\n+/
+        )
+        .map(
+            s => s.trim()
+        )
+        .filter(
+            s => s.length > 0
+        );
+
+}
+
+
+/* =========================================================
+   단어 HTML
+========================================================= */
+
+function escapeHTML(text) {
+
+    return text
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+function makeWordHTML(sentence) {
+
+    const parts =
+        sentence.split(
+            /(\s+)/
+        );
+
+
+    return parts.map(
+        part => {
+
+            if (/^\s+$/.test(part)) {
+                return part;
+            }
+
+
+            const clean =
+                part.replace(
+                    /[.,!?;:"'()[\]{}]/g,
+                    ""
+                );
+
+
+            if (!clean) {
+                return escapeHTML(part);
+            }
+
+
+            return `
+                <span
+                    class="word"
+                    data-word="${escapeHTML(clean)}">
+                    ${escapeHTML(part)}
+                </span>
+            `;
+
+        }
+    ).join("");
+
+}
+
+
+/* =========================================================
+   문장 카드 생성
+========================================================= */
+
+function createSentenceCards() {
+
+    const text =
+        textInput.value.trim();
+
+
+    sentences.innerHTML = "";
+
+
+    if (!text) {
+
+        sentences.innerHTML = `
+            <div class="sentence-card">
+                <div class="sentence-text">
+                    ✨ 문장을 입력하면
+                    여기에서 문장별로 연습할 수 있어요!
+                </div>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    const list =
+        splitSentences(text);
+
+
+    list.forEach(
+        (sentence, index) => {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "sentence-card";
+
+
+            card.dataset.index =
+                index;
+
+
+            card.innerHTML = `
+
+                <div class="sentence-text">
+
+                    <span class="sentence-number">
+                        ${index + 1}
+                    </span>
+
+                    ${makeWordHTML(sentence)}
+
+                </div>
+
+
+                <div class="sentence-tools">
+
+                    <button
+                        class="sentence-button"
+                        data-action="speak"
+                        data-index="${index}">
+
+                        🔊 이 문장 듣기
+
+                    </button>
+
+                    <button
+                        class="sentence-button"
+                        data-action="slow"
+                        data-index="${index}">
+
+                        🐢 천천히
+
+                    </button>
+
+                </div>
+
+
+                <div class="extra-info">
+
+                    <input
+                        class="info-input ipa-input"
+                        placeholder="🔤 IPA 발음기호"
+                        aria-label="IPA 발음기호">
+
+                    <input
+                        class="info-input meaning-input"
+                        placeholder="🇰🇷 한국어 뜻"
+                        aria-label="한국어 뜻">
+
+                </div>
+
+            `;
+
+
+            sentences.appendChild(card);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   문장 클릭 이벤트
+========================================================= */
+
+sentences.addEventListener(
+    "click",
+    event => {
+
+        const word =
+            event.target.closest(
+                ".word"
+            );
+
+
+        if (word) {
+
+            speakWord(
+                word.dataset.word
+            );
+
+            return;
+        }
+
+
+        const button =
+            event.target.closest(
+                ".sentence-button"
+            );
+
+
+        if (!button) {
+            return;
+        }
+
+
+        const index =
+            Number(button.dataset.index);
+
+
+        const list =
+            splitSentences(
+                textInput.value.trim()
+            );
+
+
+        if (!list[index]) {
+            return;
+        }
+
+
+        if (
+            button.dataset.action ===
+            "slow"
+        ) {
+
+            speak(
+                list[index],
+                0.65,
+                index
+
+            );
+
+        } else {
+
+            speak(
+                list[index],
+                Number(speedRange.value),
+                index
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   특정 단어 읽기
+========================================================= */
+
+function speakWord(word) {
+
+    speechSynthesis.cancel();
+
+
+    const utterance =
+        new SpeechSynthesisUtterance(
+            word
+        );
+
+
+    const voice =
+        findVoice(
+            selectedAccent
+        );
+
+
+    if (voice) {
+
+        utterance.voice =
+            voice;
+
+        utterance.lang =
+            voice.lang;
+
+    } else {
+
+        utterance.lang =
+            selectedAccent === "british"
+                ? "en-GB"
+                : "en-US";
+
+    }
+
+
+    utterance.rate =
+        Number(speedRange.value);
+
+
+    utterance.pitch =
+        1.08;
+
+
+    utterance.onstart = () => {
+
+        status.classList.add(
+            "active"
+        );
+
+        status.textContent =
+            `💗 "${word}" 발음을 듣고 있어요...`;
+
+    };
+
+
+    utterance.onend = () => {
+
+        status.classList.remove(
+            "active"
+        );
+
+        status.textContent =
+            `✨ "${word}" 발음 끝!`;
+
+    };
+
+
+    speechSynthesis.speak(
+        utterance
+    );
+
+}
+
+
+/* =========================================================
+   말하기
+========================================================= */
+
+function speak(
+    text,
+    rate = Number(speedRange.value),
+    sentenceIndex = -1
+) {
+
+    if (!text) {
+        return;
+    }
+
+
+    speechSynthesis.cancel();
+
+
+    currentSentence =
+        sentenceIndex;
+
+
+    document
+        .querySelectorAll(
+            ".sentence-card"
+        )
+        .forEach(
+            card => {
+
+                card.classList.remove(
+                    "playing"
+                );
+
+            }
+        );
+
+
+    if (sentenceIndex >= 0) {
+
+        const card =
+            document.querySelector(
+                `.sentence-card[data-index="${sentenceIndex}"]`
+            );
+
+
+        if (card) {
+
+            card.classList.add(
+                "playing"
+            );
+
+            card.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+    }
+
+
+    const utterance =
+        new SpeechSynthesisUtterance(
+            text
+        );
+
+
+    const voice =
+        findVoice(
+            selectedAccent
+        );
+
+
+    if (voice) {
+
+        utterance.voice =
+            voice;
+
+        utterance.lang =
+            voice.lang;
+
+    } else {
+
+        utterance.lang =
+            selectedAccent === "british"
+                ? "en-GB"
+                : "en-US";
+
+    }
+
+
+    utterance.rate =
+        rate;
+
+
+    utterance.pitch =
+        1.04;
+
+
+    utterance.volume =
+        1;
+
+
+    utterance.onstart = () => {
+
+        status.classList.add(
+            "active"
+        );
+
+
+        const flag =
+            selectedAccent === "british"
+                ? "🇬🇧"
+                : "🇺🇸";
+
+
+        status.textContent =
+            `${flag} 예쁘게 읽고 있어요... 💕`;
+
+    };
+
+
+    utterance.onend = () => {
+
+        status.classList.remove(
+            "active"
+        );
+
+
+        document
+            .querySelectorAll(
+                ".sentence-card"
+            )
+            .forEach(
+                card => {
+
+                    card.classList.remove(
+                        "playing"
+                    );
+
+                }
+            );
+
+
+        status.textContent =
+            "✨ 다 읽었어요! 다시 들어볼까요?";
+
+    };
+
+
+    utterance.onerror = () => {
+
+        status.classList.remove(
+            "active"
+        );
+
+
+        status.textContent =
+            "🥺 음성을 재생하지 못했어요.";
+
+    };
+
+
+    speechSynthesis.speak(
+        utterance
+    );
+
+}
+
+
+/* =========================================================
+   전체 읽기
+========================================================= */
+
+function speakAll() {
+
+    const text =
+        textInput.value.trim();
+
+
+    if (!text) {
+
+        status.textContent =
+            "💗 먼저 영어 문장을 입력해 주세요!";
+
+        textInput.focus();
+
+        return;
+    }
+
+
+    saveHistory(text);
+
+
+    const list =
+        splitSentences(text);
+
+
+    /*
+      문장별로 순서대로 읽기
+    */
+
+    speechSynthesis.cancel();
+
+
+    let index = 0;
+
+
+    function next() {
+
+        if (index >= list.length) {
+
+            status.textContent =
+                "👑 모든 문장을 다 읽었어요!";
+
+            document
+                .querySelectorAll(
+                    ".sentence-card"
+                )
+                .forEach(
+                    card =>
+                        card.classList.remove(
+                            "playing"
+                        )
+                );
+
+            return;
+        }
+
+
+        speak(
+            list[index],
+            Number(speedRange.value),
+            index
+        );
+
+
+        const check =
+            setInterval(
+                () => {
+
+                    if (
+                        !speechSynthesis.speaking
+                    ) {
+
+                        clearInterval(
+                            check
+                        );
+
+                        index++;
+
+                        setTimeout(
+                            next,
+                            100
+                        );
+
+                    }
+
+                },
+                100
+            );
+
+    }
+
+
+    next();
+
+}
+
+
+/* =========================================================
+   전체 읽기 버튼
+========================================================= */
+
+speakButton.addEventListener(
+    "click",
+    speakAll
+);
+
+
+/* =========================================================
+   정지
+========================================================= */
+
+stopButton.addEventListener(
+    "click",
+    () => {
+
+        speechSynthesis.cancel();
+
+
+        document
+            .querySelectorAll(
+                ".sentence-card"
+            )
+            .forEach(
+                card =>
+                    card.classList.remove(
+                        "playing"
+                    )
+            );
+
+
+        status.classList.remove(
+            "active"
+        );
+
+
+        status.textContent =
+            "⏹️ 읽기를 멈췄어요.";
+
+    }
+);
+
+
+/* =========================================================
+   최근 문장 저장
+========================================================= */
+
+function getHistory() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "princessEnglishHistory"
+            )
+        ) || [];
+
+    } catch {
+
+        return [];
+
+    }
+
+}
+
+
+function saveHistory(text) {
+
+    if (!text) {
+        return;
+    }
+
+
+    let history =
+        getHistory();
+
+
+    history =
+        history.filter(
+            item =>
+                item !== text
+        );
+
+
+    history.unshift(text);
+
+
+    history =
+        history.slice(0, 5);
+
+
+    localStorage.setItem(
+        "princessEnglishHistory",
+        JSON.stringify(history)
+    );
+
+
+    renderHistory();
+
+}
+
+
+/* =========================================================
+   History 표시
+========================================================= */
+
+function renderHistory() {
+
+    const history =
+        getHistory();
+
+
+    historyList.innerHTML = "";
+
+
+    if (history.length === 0) {
+
+        historyList.innerHTML = `
+            <div class="history-empty">
+                아직 저장된 문장이 없어요 💗
+            </div>
+        `;
+
+        return;
+    }
+
+
+    history.forEach(
+        (text, index) => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "history-item";
+
+
+            button.innerHTML = `
+                <span>
+                    ${index === 0 ? "👑" : "💗"}
+                </span>
+
+                <span>
+                    ${escapeHTML(
+                        text.length > 85
+                            ? text.slice(0,85) + "..."
+                            : text
+                    )}
+                </span>
+            `;
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    textInput.value =
+                        text;
+
+                    updateCharCount();
+
+                    createSentenceCards();
+
+                    textInput.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                    status.textContent =
+                        "📖 최근 문장을 불러왔어요!";
+
+                }
+            );
+
+
+            historyList.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   History 삭제
+========================================================= */
+
+clearHistory.addEventListener(
+    "click",
+    () => {
+
+        localStorage.removeItem(
+            "princessEnglishHistory"
+        );
+
+
+        renderHistory();
+
+
+        status.textContent =
+            "🧹 최근 문장을 모두 지웠어요.";
+
+    }
+);
+
+
+/* =========================================================
+   Ctrl + Enter
+========================================================= */
+
+textInput.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            (event.ctrlKey ||
+             event.metaKey) &&
+            event.key === "Enter"
+        ) {
+
+            event.preventDefault();
+
+            speakAll();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   초기화
+========================================================= */
+
+updateCharCount();
+
+updateSpeedText();
+
+createSentenceCards();
+
+renderHistory();
+
+
+/* =========================================================
+   페이지 종료
+========================================================= */
+
+window.addEventListener(
+    "beforeunload",
+    () => {
+
+        speechSynthesis.cancel();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
